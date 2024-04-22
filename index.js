@@ -85,10 +85,29 @@
 
 
 
-let button = document.querySelector("button");
-button.addEventListener("click", showTemperature);
-function showTemperature(event) {
-  event.preventDefault();
-  alert("Temperature is 18 degrees");
-  button.innerHTML = "18 degrees";
-}
+// let button = document.querySelector("button");
+// button.addEventListener("click", showTemperature);
+// function showTemperature(event) {
+//   event.preventDefault();
+//   alert("Temperature is 18 degrees");
+//   button.innerHTML = "18 degrees";
+// }
+let FirstBtn = document.querySelector("#special-button");
+FirstBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  alert("Hooray!");
+});
+let form = document.querySelector("#password-form");
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  let Inp = document.querySelector("#password-input");
+  alert(Inp.value);
+});
+
+let Secondform = document.querySelector("#signup-form");
+Secondform.addEventListener("submit", (e) => {
+  e.preventDefault();
+  let InpEmail = document.querySelector("#email-input");
+  let Name = document.querySelector("#username-input");
+  alert(`your Email is : ${InpEmail.value} & your username is:${Name.value}`);
+});

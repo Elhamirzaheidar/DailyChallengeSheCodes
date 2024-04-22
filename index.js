@@ -43,8 +43,34 @@
 // console.log(Time.getDay());
 // console.log(Time.getFullYear());
 // console.log(Time.getMonth());
-let now=new Date();
-console.log(now);
-console.log(now.getMonth());
-console.log(now.getTime());
-console.log(now.getFullYear());
+// let now=new Date();
+// console.log(now);
+// console.log(now.getMonth());
+// console.log(now.getTime());
+// console.log(now.getFullYear());
+let Time = new Date();
+let Dayes = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
+let Month = [
+  "Jan",
+  "Feb",
+  "March",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
+let Months = Month[Time.getMonth()];
+let Days = Dayes[Time.getDay()];
+console.log(Time);
+console.log(Time.getMilliseconds());
+console.log(Days);
+console.log(Time.getFullYear());
+console.log(Months);
+console.log(
+  `Today is ${Days},${Months}${Time.getMonth()},${Time.getFullYear()}`
+);

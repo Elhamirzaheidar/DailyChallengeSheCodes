@@ -92,22 +92,63 @@
 //   alert("Temperature is 18 degrees");
 //   button.innerHTML = "18 degrees";
 // }
-let FirstBtn = document.querySelector("#special-button");
-FirstBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  alert("Hooray!");
-});
-let form = document.querySelector("#password-form");
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  let Inp = document.querySelector("#password-input");
-  alert(Inp.value);
-});
+// let FirstBtn = document.querySelector("#special-button");
+// FirstBtn.addEventListener("click", (e) => {
+//   e.preventDefault();
+//   alert("Hooray!");
+// });
+// let form = document.querySelector("#password-form");
+// form.addEventListener("submit", (e) => {
+//   e.preventDefault();
+//   let Inp = document.querySelector("#password-input");
+//   alert(Inp.value);
+// });
 
-let Secondform = document.querySelector("#signup-form");
-Secondform.addEventListener("submit", (e) => {
-  e.preventDefault();
-  let InpEmail = document.querySelector("#email-input");
-  let Name = document.querySelector("#username-input");
-  alert(`your Email is : ${InpEmail.value} & your username is:${Name.value}`);
-});
+// let Secondform = document.querySelector("#signup-form");
+// Secondform.addEventListener("submit", (e) => {
+//   e.preventDefault();
+//   let InpEmail = document.querySelector("#email-input");
+//   let Name = document.querySelector("#username-input");
+//   alert(`your Email is : ${InpEmail.value} & your username is:${Name.value}`);
+// });
+function search(event) {
+  event.preventDefault();
+  let searchInputElement = document.querySelector("#search-input");
+  let cityElement = document.querySelector("#current-city");
+  cityElement.innerHTML = searchInputElement.value;
+}
+
+function formatDate(date) {
+  let minutes = date.getMinutes();
+  let hours = date.getHours();
+  let day = date.getDay();
+
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  let formattedDay = days[day];
+  return `${formattedDay} ${hours}:${minutes}`;
+}
+
+let searchForm = document.querySelector("#search-form");
+searchForm.addEventListener("submit", search);
+
+let currentDateELement = document.querySelector("#current-date");
+let currentDate = new Date();
+
+currentDateELement.innerHTML = formatDate(currentDate);
